@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>쇼핑몰회원관리</title>
 <style type="text/css">
   header{
     background-color:#0022ee;  /* 배경색 */
@@ -59,13 +59,18 @@
 </head>
 <body>
  
+<?php
+  $host=$_SERVER['HTTP_HOST'];
+  $path="http://".$host;
+?>
+
 <header>
 <h1> 쇼핑몰 회원관리 ver 1.0 </h1>
 </header>
-
     <nav>
-        &emsp;&emsp; <a href=member.php>회원가입</a>
-        &emsp;&emsp; <a href=member_list.php>회원목록보기 </a>
-        &emsp;&emsp; <a href=test_list.php>목록보기</a>
-        &emsp;&emsp; <a href=index.php>홈으로 </a>
+        &emsp;&emsp; <a href=<?=$path?>/member/member.php>회원가입</a>
+        &emsp;&emsp; <a href=<?=$path?>/member/member_list.php>회원목록보기 </a>
+        &emsp;&emsp; <a href=<?=$path?>/test/test_list.php>목록보기</a>
+        &emsp;&emsp; <a href=<?=$path?>/test/test_insert.php>목록보기</a>
+        &emsp;&emsp; <a href=<?=$path?>/index.php>홈으로 </a>
     </nav>

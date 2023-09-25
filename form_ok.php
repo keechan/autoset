@@ -1,5 +1,5 @@
-<? include("top.php") ?>
-<? include("dbconn.php") ?>
+<? include $_SERVER["DOCUMENT_ROOT"]."/include/top.php" ?>
+<? include $_SERVER["DOCUMENT_ROOT"]."/include/dbconn.php" ?>
 <?
 $id=$_GET['id'];
 $password=$_GET['password'];
@@ -20,4 +20,4 @@ $conn->close();
 </br>
 </section>
 
-<?include("bottom.php") ?>
+<? include $_SERVER["DOCUMENT_ROOT"]."/include/bottom.php" ?>

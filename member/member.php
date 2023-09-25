@@ -1,4 +1,4 @@
-<? include("top.php") ?>
+<? include $_SERVER["DOCUMENT_ROOT"]."/include/top.php" ?>
 <section>
 <br>
 <div id=divsection2 >
@@ -14,4 +14,4 @@
 </div>
 <br>
 </section>
-<? include("bottom.php") ?>
+<? include $_SERVER["DOCUMENT_ROOT"]."/include/bottom.php" ?>

@@ -1,2 +1,0 @@
-# autoset
-push TEST

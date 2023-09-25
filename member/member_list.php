@@ -1,10 +1,10 @@
-<? include ("top.php") ?>
+<? include $_SERVER["DOCUMENT_ROOT"]."/include/top.php" ?>
 <section>
 <br>   
 <div id=divsection>
 <h2>회원관리 목록보기</h2>  
 
-<? include("dbconn.php") ?>
+<? include $_SERVER["DOCUMENT_ROOT"]."/include/dbconn.php" ?>
 
 <?
 $ch1=$_GET['ch1'];
@@ -69,4 +69,4 @@ $conn->close();
 </div>
 <br>   
 </section>
-<? include ("bottom.php") ?>
+<? include $_SERVER["DOCUMENT_ROOT"]."/include/bottom.php" ?>
