@@ -20,13 +20,43 @@ $ch2=$_GET["ch2"];
 <?
     //echo $ch1 . "/" . $ch2;
     if ($ch1=="") {
-        $sql="SELECT sNo, sName, kor, eng, math, hist, case when round((kor + eng + math + hist) / 4, 1) >= 90 then 'A' else 'F' end grade FROM examtbl";
-    } else if ($ch1=="sname") {
-        $sql="SELECT sNo, sName, kor, eng, math, hist, case when round((kor + eng + math + hist) / 4, 1) >= 90 then 'A' else 'F' end grade FROM examtbl WHERE sName LIKE '%$ch2%'";
-    } else if ($ch1=="grade") {
-        $sql="SELECT sNo, sName, kor, eng, math, hist, grade FROM (SELECT sNo, sName, kor, eng, math, hist, case when round((kor + eng + math + hist) / 4, 1) >= 90 then 'A' else 'F' end grade FROM examtbl) examtbl WHERE grade LIKE '%$ch2%'";
-    }
-    echo $sql;
+      $sql="SELECT sNo, sName, kor, eng, math, hist, 
+                   case 
+                     when (kor + eng + math + hist) / 4 >= 90 then 
+                       'A'
+                     when (kor + eng + math + hist) / 4 >= 80 || (kor + eng + math + hist) / 4 < 90 then 
+                       'B'
+                     when (kor + eng + math + hist) / 4 >= 70 || (kor + eng + math + hist) / 4 < 80 then 
+                       'C'                         
+                     else 
+                       'F'
+                   end grade FROM examtbl";
+  } else if ($ch1=="sname") {
+      $sql="SELECT sNo, sName, kor, eng, math, hist, 
+                   case 
+                     when (kor + eng + math + hist) / 4 >= 90 then 
+                       'A'
+                     when (kor + eng + math + hist) / 4 >= 80 || (kor + eng + math + hist) / 4 < 90 then 
+                       'B'
+                     when (kor + eng + math + hist) / 4 >= 70 || (kor + eng + math + hist) / 4 < 80 then 
+                       'C'                         
+                     else 
+                       'F'
+                   end grade FROM examtbl WHERE sName LIKE '%$ch2%'";
+  } else if ($ch1=="grade") {
+      $sql="SELECT sNo, sName, kor, eng, math, hist, grade FROM (SELECT sNo, sName, kor, eng, math, hist, 
+                   case 
+                     when (kor + eng + math + hist) / 4 >= 90 then 
+                       'A'
+                     when (kor + eng + math + hist) / 4 >= 80 || (kor + eng + math + hist) / 4 < 90 then 
+                       'B'
+                     when (kor + eng + math + hist) / 4 >= 70 || (kor + eng + math + hist) / 4 < 80 then 
+                       'C'                         
+                     else 
+                       'F'
+                    end grade FROM examtbl) examtbl WHERE grade LIKE '%$ch2%'";
+  }
+  //echo $sql;
     
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {

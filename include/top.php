@@ -72,5 +72,8 @@
         &emsp;&emsp; <a href=<?=$path?>/member/member_list.php>회원목록보기 </a>
         &emsp;&emsp; <a href=<?=$path?>/test/test_list.php>목록보기</a>
         &emsp;&emsp; <a href=<?=$path?>/test/test_insert.php>목록보기</a>
+        &emsp;&emsp; <a href=<?=$path?>/test/sample1.php>sample</a>
+        &emsp;&emsp; <a href=<?=$path?>/psd/psdForm.php>자료실저장</a>
+        &emsp;&emsp; <a href=<?=$path?>/psd/psd_list.php>자료실목록</a>
         &emsp;&emsp; <a href=<?=$path?>/index.php>홈으로 </a>
     </nav>
